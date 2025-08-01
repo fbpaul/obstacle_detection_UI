@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+    LLM-Router-Server-Dashboard:
+        image: docker.io/library/node:22.15.1
+        container_name: obstacle-detection-frontend
+        command: tail -f /dev/null
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /data/paul.fc.tsai_data:/app
+
+        working_dir: /app
+        ports:
+            - "8944:8944"
+        restart: unless-stopped
